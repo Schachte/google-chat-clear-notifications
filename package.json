@@ -1,0 +1,29 @@
+{
+  "name": "google-chat-clear-notifications",
+  "version": "1.0.0",
+  "description": "Sidebar button + local server to bulk-clear all unread Google Chat notifications.",
+  "private": true,
+  "license": "MIT",
+  "author": "Ryan Schachte",
+  "homepage": "https://github.com/Schachte/google-chat-clear-notifications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Schachte/google-chat-clear-notifications.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Schachte/google-chat-clear-notifications/issues"
+  },
+  "keywords": [
+    "google-chat",
+    "chrome-extension",
+    "notifications",
+    "productivity"
+  ],
+  "scripts": {
+    "install-deps": "./install.sh",
+    "start": "./start.sh"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

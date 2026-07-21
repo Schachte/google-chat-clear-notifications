@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Google Chat Clear Notifications",
+  "version": "1.0.0",
+  "description": "One-click clear all unread Google Chat notifications from the sidebar.",
+  "homepage_url": "https://github.com/Schachte/google-chat-clear-notifications",
+  "permissions": ["storage", "scripting", "alarms"],
+  "host_permissions": [
+    "https://chat.google.com/*",
+    "https://mail.google.com/chat/*",
+    "http://localhost:9555/*",
+    "http://localhost:9556/*"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/chat/*",
+        "https://chat.google.com/*"
+      ],
+      "js": ["scripts/interceptor.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://mail.google.com/chat/*",
+        "https://chat.google.com/*"
+      ],
+      "js": ["scripts/content.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://mail.google.com/chat/*",
+        "https://chat.google.com/*"
+      ],
+      "js": ["scripts/notification-clearer.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
