@@ -1,4 +1,4 @@
-# google-chat-clear-notifications
+# Google Chat Clear Notifications 
 
 Bulk-clear Google Chat unread notifications from the sidebar. Chrome extension + local Node server.
 
